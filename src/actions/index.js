@@ -13,9 +13,9 @@ export const fetchTable = () => {
 };
 
 // FETCH CURRENCY TABLE DETAILS
-export const fetchTableDetail = (id) => {
+export const fetchTableDetail = (id, curConvert = 'USD') => {
   return async dispatch => {
-    const response = await coinmarketcap.get(`/v1/cryptocurrency/quotes/latest?id=${id}&CMC_PRO_API_KEY=${KEY}`);
+    const response = await coinmarketcap.get(`/v1/cryptocurrency/quotes/latest?id=${id}&convert=${curConvert}&CMC_PRO_API_KEY=${KEY}`);
     dispatch({ type: 'FETCH_TABLE_DETAIL', payload: response.data.data[`${id}`] });
   };
 };
@@ -49,5 +49,13 @@ export const selectDropdown = (value) => {
   return { 
     type: 'SELECT_DROPDOWN',
     payload: value
+  };
+};
+
+// SELECT PRICE DROPDOWN
+export const selectCurrencyPrice = curValue => {
+  return {
+    type: 'CURRENCY_FOR_PRICE_SELECTED',
+    payload: curValue
   };
 };
