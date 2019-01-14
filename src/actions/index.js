@@ -1,42 +1,45 @@
 import coinmarketcap from '../apis/coinmarketcap';
 
 const KEY = 'a91f97ac-dc9e-44d0-8b81-52109527f339';
-const LIMIT = '20';
+const TOTALLIMIT = '20';
+const TABLELIMIT = '5';
 
-// FETCH CURRENCY LIST
-export const fetchCurrency = () => {
+// FETCH CURRENCY TABLE
+export const fetchTable = () => {
   return async dispatch => {
-    const response = await coinmarketcap.get(`/v1/cryptocurrency/map?CMC_PRO_API_KEY=${KEY}&limit=${LIMIT}`);
-    dispatch({ type: 'FETCH_CURRENCY', payload: response.data.data });
+    const response = await coinmarketcap.get(`/v1/cryptocurrency/map?CMC_PRO_API_KEY=${KEY}&limit=${TABLELIMIT}`);
+    dispatch({ type: 'FETCH_TABLE', payload: response.data.data });
+  };
+};
+
+// FETCH CURRENCY DROPDOWN
+export const fetchDropdown = () => {
+  return async dispatch => {
+    const response = await coinmarketcap.get(`/v1/cryptocurrency/map?CMC_PRO_API_KEY=${KEY}&limit=${TOTALLIMIT}`);
+    dispatch({ type: 'FETCH_DROPDOWN', payload: response.data.data });
   };
 };
 
 // ADD CURRENCY TO TABLE
-const addCurrencyRow = (id) => {
+export const addCurrencyRow = (id) => {
   return { 
     type: 'ADD_TABLE_ROW',
-    payload: {
-      id: id
-    }
+    payload: id
   };
 };
 
 // REMOVE CURRENCY FROM TABLE
-const removeCurrencyRow = (id) => {
+export const removeCurrencyRow = (id) => {
   return { 
     type: 'REMOVE_TABLE_ROW',
-    payload: {
-      id: id
-    }
+    payload: id
   };
 };
 
 // SELECT CURRENCY DROPDOWN
-const selectCurrencyDropdown = (value) => {
+export const selectDropdown = (value) => {
   return { 
     type: 'SELECT_DROPDOWN',
-    payload: {
-      value: value
-    }
+    payload: value
   };
 };

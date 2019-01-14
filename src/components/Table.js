@@ -1,6 +1,11 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { fetchTable } from '../actions';
 
 class Table extends React.Component {
+  componentDidMount() {
+    this.props.fetchTable();
+  }
 
   createTable() {
     return(
@@ -31,4 +36,11 @@ class Table extends React.Component {
   }
 }
 
-export default Table;
+const mapStateToProps = (state) => {
+  return { tableRows: state.tableList };
+};
+
+export default connect(
+  mapStateToProps, 
+  { fetchTable }
+)(Table);
