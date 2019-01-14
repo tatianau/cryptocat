@@ -7,7 +7,21 @@ class Table extends React.Component {
     this.props.fetchTable();
   }
 
-  createTable() {
+  renderTableRows() {
+    return this.props.tableRows.map(cur => {
+      return(
+        <div className="currency-row" key={cur.id}>
+          <div className="currency-col currency-name">{cur.name}</div>
+          <div className="currency-col currency-rank">RANK</div>
+          <div className="currency-col currency-symbol">{cur.symbol}</div>
+          <div className="currency-col currency-price">PRICE</div>
+          <div className="currency-col currency-delete"><button>Delete</button></div>
+        </div>
+      );
+    });
+  }
+
+  render() {
     return(
       <div className="currency-table">
         <div className="currency-row currency-head">
@@ -23,14 +37,7 @@ class Table extends React.Component {
           </div>
           <div className="currency-col currency-delete">Delete</div>
         </div>
-      </div>
-    );
-  }
-
-  render() {
-    return(
-      <div>
-        {this.createTable()}
+        {this.renderTableRows()}
       </div>
     );
   }
