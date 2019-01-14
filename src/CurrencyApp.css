@@ -1,0 +1,22 @@
+.container {
+  max-width: 70em;
+  margin: 0 auto;
+}
+.currency-table {
+  margin: 0 auto 2em;
+}
+.currency-row {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(10em, 1fr));
+}
+.currency-head {
+  background-color: #ccc;
+}
+.currency-col {
+  padding: .5em .8em;
+  text-align: center;
+}
+.currency-dropdown {
+  display: flex;
+  justify-content: center;
+}
