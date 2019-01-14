@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { fetchTable } from '../actions';
+import TableRow from './TableRow';
 
 class Table extends React.Component {
   componentDidMount() {
@@ -10,13 +11,7 @@ class Table extends React.Component {
   renderTableRows() {
     return this.props.tableRows.map(cur => {
       return(
-        <div className="currency-row" key={cur.id}>
-          <div className="currency-col currency-name">{cur.name}</div>
-          <div className="currency-col currency-rank">RANK</div>
-          <div className="currency-col currency-symbol">{cur.symbol}</div>
-          <div className="currency-col currency-price">PRICE</div>
-          <div className="currency-col currency-delete"><button>Delete</button></div>
-        </div>
+        <TableRow curId={cur.id} key={cur.id} />
       );
     });
   }
