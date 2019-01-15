@@ -5,7 +5,7 @@ export default (listOfRows = [], action) => {
     case 'ADD_TABLE_ROW': 
       return [...listOfRows, action.payload.id];
     case 'REMOVE_TABLE_ROW': 
-      return listOfRows.filter(id => id !== action.payload.id);
+      return listOfRows.filter(item => item.id !== action.payload);
     default:
       return listOfRows;
   }

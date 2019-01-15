@@ -1,22 +1,72 @@
+:root { 
+  --background-color: #293359; 
+  --text-color: #fff;
+  --btn-color: #ec6866;
+} 
+* {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5vw;
+  font-weight: 400;
+  color: #fff;
+  color: var(--text-color);
+  background-color: #293359; 
+  background: var(--background-color);
+}
+button,
+select {
+  font-size: inherit;
+  color: inherit;
+}
+a,
+button {
+  cursor: pointer;
+}
 .container {
   max-width: 70em;
   margin: 0 auto;
 }
 .currency-table {
   margin: 0 auto 2em;
+  padding: 2em 0;
 }
 .currency-row {
   display: grid;
   grid-template-columns: repeat(5, minmax(10em, 1fr));
 }
-.currency-head {
-  background-color: #ccc;
-}
 .currency-col {
-  padding: .5em .8em;
+  padding: .8em;
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .currency-dropdown {
   display: flex;
   justify-content: center;
+}
+.btn-delete {
+  background: #ec6866;
+  background: var(--btn-color);
+  border: 0;
+  padding: .4em 1.4em;
+  border-radius: .3em;
+}
+.currency-select,
+.price-select {
+  background: #517cff;
+  height: 2.2em;
+}
+@media (max-width: 1460px) {
+  body {
+    font-size: 1.8rem;
+  }
 }

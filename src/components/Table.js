@@ -17,7 +17,7 @@ class Table extends React.Component {
   }
 
   render() {
-    console.log(this.props.selectedCur);
+    console.log(this.props.tableRows);
 
     return(
       <div className="currency-table">
@@ -28,6 +28,7 @@ class Table extends React.Component {
           <div className="currency-col currency-price">
           <select 
             id="price-select" 
+            className="price-select"
             value={this.props.selectedCur} 
             onChange={(e) => this.props.selectCurrencyPrice(e.target.value)}
           >
@@ -36,7 +37,7 @@ class Table extends React.Component {
             <option value="ETH">ETH</option>
           </select>
           </div>
-          <div className="currency-col currency-delete">Delete</div>
+          <div className="currency-col currency-delete"></div>
         </div>
         {this.renderTableRows()}
       </div>

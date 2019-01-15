@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { fetchTableDetail } from '../actions';
+import { fetchTableDetail, removeCurrencyRow } from '../actions';
 
 class TableRow extends React.Component {
   componentDidMount() {
@@ -26,7 +26,14 @@ class TableRow extends React.Component {
         <div className="currency-col currency-rank">{curItem.id}</div>
         <div className="currency-col currency-symbol">{curItem.symbol}</div>
         <div className="currency-col currency-price">curItem.quote.USD.price</div>
-        <div className="currency-col currency-delete"><button>Delete</button></div>
+        <div className="currency-col currency-delete">
+          <button 
+            className="btn-delete"
+            onClick={() => this.props.removeCurrencyRow(curItem.id)}
+          >
+            Delete
+          </button>
+        </div>
       </div>
     );
   }
@@ -38,5 +45,5 @@ const mapStateToProps = (state, ownProps) => {
 
 export default connect(
   mapStateToProps, 
-  { fetchTableDetail }
+  { fetchTableDetail, removeCurrencyRow }
 )(TableRow);

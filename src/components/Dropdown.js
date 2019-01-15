@@ -18,9 +18,8 @@ class Dropdown extends React.Component {
   render() {
     return(
       <div className="currency-dropdown">
-        <label htmlFor="currency-select">Select a currency:</label>
-        <select id="currency-select">
-          <option value="">--Add Currency--</option>
+        <select id="currency-select" className="currency-select">
+          <option value="">--Select Currency--</option>
           {this.renderDropdown()}
         </select>
       </div>
