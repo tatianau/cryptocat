@@ -19,7 +19,7 @@ class TableRow extends React.Component {
         <div className="currency-col currency-name">{curItem.name}</div>
         <div className="currency-col currency-rank">{curItem.cmc_rank}</div>
         <div className="currency-col currency-symbol">{curItem.symbol}</div>
-        <div className="currency-col currency-price">{curItem.quote.USD.price}</div>
+        <div className="currency-col currency-price">{curItem.quote[`${this.props.curPrice}`].price}</div>
         <div className="currency-col currency-delete">
           <button 
             className="btn-delete"

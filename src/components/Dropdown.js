@@ -8,7 +8,7 @@ class Dropdown extends React.Component {
   }
 
   onSelectDropdown = (val) => {
-    const curItem = this.props.dropdownList.find(item => item.id == val);
+    const curItem = this.props.dropdownList.find(item => item.id === parseInt(val));
     this.props.addCurrencyRow(curItem);
     this.props.removeFromDropdown(parseInt(val));
   }

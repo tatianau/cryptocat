@@ -13,9 +13,9 @@ export const fetchTable = () => {
 };
 
 // FETCH CURRENCY TABLE DETAILS
-export const fetchTableDetail = (id, curConvert = 'USD') => {
+export const fetchTableDetail = (id) => {
   return async dispatch => {
-    const response = await coinmarketcap.get(`/v1/cryptocurrency/quotes/latest?id=${id}&convert=${curConvert}&CMC_PRO_API_KEY=${KEY}`);
+    const response = await coinmarketcap.get(`/v1/cryptocurrency/quotes/latest?id=${id}&convert=USD,BTC,ETH&CMC_PRO_API_KEY=${KEY}`);
     dispatch({ type: 'FETCH_TABLE_DETAIL', payload: response.data.data[`${id}`] });
   };
 };
