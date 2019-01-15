@@ -3,7 +3,7 @@ export default (listOfRows = [], action) => {
     case 'FETCH_TABLE': 
       return listOfRows = action.payload;
     case 'ADD_TABLE_ROW': 
-      return [...listOfRows, action.payload.id];
+      return [...listOfRows, action.payload];
     case 'REMOVE_TABLE_ROW': 
       return listOfRows.filter(item => item.id !== action.payload);
     default:

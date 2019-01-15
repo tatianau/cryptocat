@@ -52,6 +52,14 @@ export const selectDropdown = (value) => {
   };
 };
 
+// ADD TO CURRENCY DROPDOWN
+export const addToDropdown = (item) => {
+  return { 
+    type: 'ADD_TO_DROPDOWN',
+    payload: item
+  };
+};
+
 // SELECT PRICE DROPDOWN
 export const selectCurrencyPrice = curValue => {
   return {

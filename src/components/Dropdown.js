@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { fetchDropdown } from '../actions';
+import { fetchDropdown, addCurrencyRow } from '../actions';
 
 class Dropdown extends React.Component {
   componentDidMount() {
@@ -10,7 +10,7 @@ class Dropdown extends React.Component {
   renderDropdown() {
     return this.props.dropdownList.map(cur => {
       return(
-        <option value={cur.slug} key={cur.id}>{cur.name}</option>
+        <option value={cur.id} key={cur.id}>{cur.name}</option>
       );
     });
   }          
@@ -18,7 +18,11 @@ class Dropdown extends React.Component {
   render() {
     return(
       <div className="currency-dropdown">
-        <select id="currency-select" className="currency-select">
+        <select 
+          id="currency-select" 
+          className="currency-select"
+          // onChange={(e) => this.props.addCurrencyRow(e.target.value)}
+        >
           <option value="">--Select Currency--</option>
           {this.renderDropdown()}
         </select>
@@ -33,6 +37,6 @@ const mapStateToProps = (state) => {
 
 export default connect(
   mapStateToProps, 
-  { fetchDropdown }
+  { fetchDropdown, addCurrencyRow }
 )(Dropdown);
 

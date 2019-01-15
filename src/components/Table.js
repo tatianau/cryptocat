@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { fetchTable, selectCurrencyPrice } from '../actions';
+import { fetchTable, selectCurrencyPrice, removeCurrencyRow, addToDropdown } from '../actions';
 import TableRow from './TableRow';
 
 class Table extends React.Component {
@@ -8,17 +8,27 @@ class Table extends React.Component {
     this.props.fetchTable();
   }
 
-  renderTableRows() {
+  onDeleteBtn = (item) => {
+    if (this.props.tableRows.length > 1) {
+      this.props.removeCurrencyRow(item.id);
+      this.props.addToDropdown(item);
+    }
+  }
+
+  renderTableRows = () => {
     return this.props.tableRows.map(cur => {
       return(
-        <TableRow curId={cur.id} key={cur.id} curPrice={this.props.selectedCur}/>
+        <TableRow 
+          onDelete={this.onDeleteBtn} 
+          curId={cur.id} 
+          key={cur.id} 
+          curPrice={this.props.selectedCur}
+        />
       );
     });
   }
 
   render() {
-    console.log(this.props.tableRows);
-
     return(
       <div className="currency-table">
         <div className="currency-row currency-head">
@@ -51,5 +61,5 @@ const mapStateToProps = (state) => {
 
 export default connect(
   mapStateToProps, 
-  { fetchTable, selectCurrencyPrice }
+  { fetchTable, selectCurrencyPrice, removeCurrencyRow, addToDropdown }
 )(Table);
