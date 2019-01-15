@@ -8,6 +8,10 @@ class Table extends React.Component {
     this.props.fetchTable();
   }
 
+  componentDidUpdate = () => {
+    this.props.tableRows.length >= 10 ? this.props.updateDropdown(true) : this.props.updateDropdown(false);
+  }
+
   onDeleteBtn = (item) => {
     if (this.props.tableRows.length > 1) {
       this.props.removeCurrencyRow(item.id);

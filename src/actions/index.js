@@ -1,7 +1,7 @@
 import coinmarketcap from '../apis/coinmarketcap';
 
 const KEY = 'a91f97ac-dc9e-44d0-8b81-52109527f339';
-const TOTALLIMIT = '20';
+const TOTALLIMIT = '100';
 const TABLELIMIT = '5';
 
 // FETCH CURRENCY TABLE
@@ -45,9 +45,9 @@ export const removeCurrencyRow = (id) => {
 };
 
 // SELECT CURRENCY DROPDOWN
-export const selectDropdown = (value) => {
+export const removeFromDropdown = (value) => {
   return { 
-    type: 'SELECT_DROPDOWN',
+    type: 'REMOVE_FROM_DROPDOWN',
     payload: value
   };
 };

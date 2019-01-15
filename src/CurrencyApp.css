@@ -1,5 +1,7 @@
 :root { 
-  --background-color: #293359; 
+  --background-page: #293359; 
+  --background-dropdown: #517cff; 
+  --background-dropdown-disabled: #B9CBFF; 
   --text-color: #fff;
   --btn-color: #ec6866;
 } 
@@ -19,7 +21,7 @@ body {
   color: #fff;
   color: var(--text-color);
   background-color: #293359; 
-  background: var(--background-color);
+  background: var(--background-page);
 }
 button,
 select {
@@ -63,7 +65,12 @@ button {
 .currency-select,
 .price-select {
   background: #517cff;
+  background: var(--background-dropdown);
   height: 2.2em;
+}
+.currency-select:disabled {
+  background: #B9CBFF;
+  background: var(--background-dropdown-disabled);
 }
 @media (max-width: 1460px) {
   body {
