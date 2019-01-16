@@ -1,14 +1,14 @@
 {
-  "main.css": "/stackadapt/static/css/main.3abfa076.chunk.css",
-  "main.js": "/stackadapt/static/js/main.cc15d2bf.chunk.js",
-  "main.js.map": "/stackadapt/static/js/main.cc15d2bf.chunk.js.map",
-  "static/js/1.30d2cb98.chunk.js": "/stackadapt/static/js/1.30d2cb98.chunk.js",
-  "static/js/1.30d2cb98.chunk.js.map": "/stackadapt/static/js/1.30d2cb98.chunk.js.map",
-  "runtime~main.js": "/stackadapt/static/js/runtime~main.57460ea6.js",
-  "runtime~main.js.map": "/stackadapt/static/js/runtime~main.57460ea6.js.map",
-  "static/media/stackbot.svg": "/stackadapt/static/media/stackbot.f00399bd.svg",
-  "static/css/main.3abfa076.chunk.css.map": "/stackadapt/static/css/main.3abfa076.chunk.css.map",
-  "index.html": "/stackadapt/index.html",
-  "precache-manifest.d351b05b39d13140309c3144ac88492c.js": "/stackadapt/precache-manifest.d351b05b39d13140309c3144ac88492c.js",
-  "service-worker.js": "/stackadapt/service-worker.js"
+  "main.css": "/cryptocat/static/css/main.3abfa076.chunk.css",
+  "main.js": "/cryptocat/static/js/main.cc15d2bf.chunk.js",
+  "main.js.map": "/cryptocat/static/js/main.cc15d2bf.chunk.js.map",
+  "static/js/1.30d2cb98.chunk.js": "/cryptocat/static/js/1.30d2cb98.chunk.js",
+  "static/js/1.30d2cb98.chunk.js.map": "/cryptocat/static/js/1.30d2cb98.chunk.js.map",
+  "runtime~main.js": "/cryptocat/static/js/runtime~main.1a630135.js",
+  "runtime~main.js.map": "/cryptocat/static/js/runtime~main.1a630135.js.map",
+  "static/media/stackbot.svg": "/cryptocat/static/media/stackbot.f00399bd.svg",
+  "static/css/main.3abfa076.chunk.css.map": "/cryptocat/static/css/main.3abfa076.chunk.css.map",
+  "index.html": "/cryptocat/index.html",
+  "precache-manifest.ff31f09b4216fd12ff8e4707fb1c9ebd.js": "/cryptocat/precache-manifest.ff31f09b4216fd12ff8e4707fb1c9ebd.js",
+  "service-worker.js": "/cryptocat/service-worker.js"
 }
