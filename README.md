@@ -1,3 +1,12 @@
+#StackAdapt Homework
+A web app to track cryptocurrency prices. 
+
+Used the [browser plugin](https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi?hl=en) to enable CORS globally.
+
+[Link to live app](https://tanyauspenskaya.github.io/cryptocat/)
+
+---
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
