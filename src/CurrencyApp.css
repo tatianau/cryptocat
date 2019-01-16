@@ -1,5 +1,6 @@
 :root { 
   --background-page: #293359; 
+  --background-header: #43D3AF;
   --background-dropdown: #517cff; 
   --background-dropdown-disabled: #B9CBFF; 
   --text-color: #fff;
@@ -15,9 +16,9 @@ html {
 }
 body {
   box-sizing: border-box;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1.5vw;
-  font-weight: 400;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.3vw;
+  font-weight: 300;
   color: #fff;
   color: var(--text-color);
   background-color: #293359; 
@@ -32,13 +33,31 @@ a,
 button {
   cursor: pointer;
 }
+img {
+  display: block;
+}
+.header {
+  background: #43D3AF;
+  background: var(--background-header);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5em;
+}
+.logo {
+  width: 6em;
+  margin: 0 1em;
+}
+.title {
+  font-weight: 400;
+}
 .container {
   max-width: 70em;
   margin: 0 auto;
+  padding: 4em 1em;
 }
 .currency-table {
-  margin: 0 auto 2em;
-  padding: 2em 0;
+  margin: 0 auto 4em;
 }
 .currency-row {
   display: grid;
@@ -75,5 +94,39 @@ button {
 @media (max-width: 1460px) {
   body {
     font-size: 1.8rem;
+  }
+}
+@media (max-width: 1000px) {
+  .currency-row {
+    display: flex;
+    justify-content: space-between;
+    padding: .5em;
+  }
+  .currency-head {
+    justify-content: center;
+  }
+  .currency-row:not(:last-of-type) {
+    border-bottom: 1px solid rgba(185, 203, 255, .3);
+  }
+  .currency-rank::before {
+    content: 'CMC Rank:\00a0\00a0';
+    color: rgba(185, 203, 255, .3);
+  }
+  .currency-head .currency-name,
+  .currency-head .currency-rank,
+  .currency-head .currency-symbol,
+  .currency-head .currency-delete {
+    display: none;
+  }
+}
+@media (max-width: 650px) {
+  .title {
+    display: none;
+  }
+  .header {
+    padding: 1em;
+  }
+  .currency-row {
+    display: block;
   }
 }
