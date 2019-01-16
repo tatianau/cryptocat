@@ -1,4 +1,4 @@
-#StackAdapt Homework
+# StackAdapt Homework
 A web app to track cryptocurrency prices. 
 
 Used the [browser plugin](https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi?hl=en) to enable CORS globally.
